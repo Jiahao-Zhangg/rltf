@@ -1,0 +1,10 @@
+*.wandb
+wandb/
+*.pycwandb/
+.venv
+*.pyc
+__pycache__/
+*.diff
+tinker-examples/
+.DS_Store
+writingbench_outputs
