@@ -19,15 +19,17 @@ def build_config_blueprint() -> chz.Blueprint[CLIConfig]:
     return chz.Blueprint(CLIConfig).apply(
         {
             # Model
-            "model_name": "meta-llama/Llama-3.1-8B-Instruct",
+            "model_name": "meta-llama/Llama-3.2-1B",
 
             # Environment
             "env": "knights_knaves",
             "horizon": 2,
             "early_termination": True,
+            "knights_knaves_num_problems": 5000,
 
             # Judge
             "judge_type": "judge",
+            "judge_model_name": "Qwen/Qwen3-4B-Instruct-2507",
 
             # Training
             "group_size": 8,

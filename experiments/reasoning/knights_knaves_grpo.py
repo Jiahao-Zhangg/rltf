@@ -19,7 +19,8 @@ def build_config_blueprint() -> chz.Blueprint[CLIConfig]:
     return chz.Blueprint(CLIConfig).apply(
         {
             # Model
-            "model_name": "meta-llama/Llama-3.1-8B-Instruct",
+            # "model_name": "meta-llama/Llama-3.1-8B-Instruct",
+            "model_name": "meta-llama/Llama-3.2-1B",
 
             "gamma": 0.1,
             # Environment

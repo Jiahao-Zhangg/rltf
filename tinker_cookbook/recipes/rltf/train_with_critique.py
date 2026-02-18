@@ -48,6 +48,7 @@ class CLIConfig:
     env: str = "math"  # Options: math, polaris, deepmath, deepmath_hard, deepscaler, gsm8k, countdown, knights_knaves, hidden_op, count_primes, knight_swap, creative_writing
     test_envs: list[str] | None = None  # List of test environments (e.g., ["math500", "aime2024"]). If None, uses dataset default.
     test_group_size: int = 1  # Number of generations per test problem for more robust evaluation
+    knights_knaves_num_problems: int = 20000
 
     # Training hyperparameters
     group_size: int = 8
@@ -167,6 +168,7 @@ async def cli_main(cli_config: CLIConfig):
             model_name_for_tokenizer=cli_config.model_name,
             renderer_name=renderer_name,
             group_size=cli_config.group_size,
+            num_problems=cli_config.knights_knaves_num_problems,
         )
     elif cli_config.env == "binary_matrix":
         # Use Binary Matrix dataset
